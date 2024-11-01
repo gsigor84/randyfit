@@ -1,0 +1,57 @@
+/* components/sidebar.css */
+
+.sidebar {
+  width: 200px;
+  background: linear-gradient(to top, #1e1e2f, #2c2c3d, #3a3a4c);
+  /* Dark gradient from bottom to top */
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  color: #ffffff;
+  /* White text color for contrast */
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 16px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  /* Light gray for links */
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.sidebar ul li a.active {
+  background-color: #0070f3;
+  color: #ffffff;
+  font-weight: 600;
+}

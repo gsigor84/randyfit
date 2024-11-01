@@ -1,0 +1,150 @@
+/* components/trainingModal.css */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  width: 800px;
+  /* Wider for the two-column layout */
+  max-width: 90%;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.searchInput {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Two-column layout */
+.modalBody {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left column: Most Recent list */
+.workoutList {
+  flex: 1;
+  border-right: 1px solid #e0e0e0;
+  padding-right: 20px;
+}
+
+.workoutList h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.workoutItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.workoutTitle {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+.workoutDetails {
+  font-size: 12px;
+  color: #888;
+  margin: 2px 0 0;
+}
+
+/* Right column: Upper body exercises */
+.exerciseDetailsSection {
+  flex: 1;
+  padding-left: 20px;
+  overflow-y: auto;
+  max-height: 300px;
+  /* Limit the height and make it scrollable if necessary */
+}
+
+.exerciseDetailsSection h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.exerciseCategory {
+  margin-bottom: 10px;
+}
+
+.exerciseCategory h4 {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.exerciseCategory ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for each exercise item */
+.exerciseCategory ul li {
+  font-size: 12px;
+  color: #555;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.exerciseCheckbox {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Select button */
+.selectButton {
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.placeholderText {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+}

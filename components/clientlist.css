@@ -1,0 +1,90 @@
+/* ClientList.css */
+
+.mainContent {
+  margin-left: 250px;
+  /* Adjusted to align with the sidebar width */
+  padding: 30px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  /* White background for the entire main content */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  /* Darker color for contrast */
+}
+
+.upgradeBtn {
+  background-color: #ff9800;
+  /* Orange color for visibility */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.upgradeBtn:hover {
+  background-color: #e58900;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  color: #333;
+  /* Text color for contrast */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  /* White background for the table */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for depth */
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #555;
+  /* Slightly lighter text for readability */
+}
+
+table th {
+  background-color: #f7f9fc;
+  /* Light background for headers */
+  font-weight: bold;
+  color: #333;
+  /* Darker header text */
+}
+
+table tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  /* Light hover effect */
+}
