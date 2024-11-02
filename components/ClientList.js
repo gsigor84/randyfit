@@ -45,13 +45,13 @@ export default function ClientList() {
         <tbody>
           {clients.map((client) => (
             <tr key={client.id}>
-              <td>
-                <Link href={`/client/${client.id}`}> {/* Dynamic link for each client */}
+              <td data-label="Name">
+                <Link href={`/client/${client.id}`}>
                   {client.name}
                 </Link>
               </td>
-              <td>{client.activity}</td>
-              <td>{client.status}</td>
+              <td data-label="Last Activity">{client.activity}</td>
+              <td data-label="Status">{client.status}</td>
             </tr>
           ))}
         </tbody>

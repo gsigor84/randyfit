@@ -1,14 +1,14 @@
 /* ClientList.css */
 
+/* Main Content for Desktop */
 .mainContent {
   margin-left: 250px;
-  /* Adjusted to align with the sidebar width */
   padding: 30px;
   min-height: 100vh;
   background-color: #ffffff;
-  /* White background for the entire main content */
 }
 
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,12 +20,10 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #333;
-  /* Darker color for contrast */
 }
 
 .upgradeBtn {
   background-color: #ff9800;
-  /* Orange color for visibility */
   color: #ffffff;
   border: none;
   padding: 8px 16px;
@@ -39,6 +37,7 @@
   background-color: #e58900;
 }
 
+/* Filters Styles */
 .filters {
   display: flex;
   gap: 15px;
@@ -52,7 +51,6 @@
   background-color: #ffffff;
   font-size: 0.9rem;
   color: #333;
-  /* Text color for contrast */
 }
 
 /* Table Styling */
@@ -60,11 +58,9 @@ table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
-  /* White background for the table */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Soft shadow for depth */
 }
 
 table th,
@@ -73,18 +69,79 @@ table td {
   border-bottom: 1px solid #eee;
   font-size: 0.9rem;
   color: #555;
-  /* Slightly lighter text for readability */
 }
 
 table th {
   background-color: #f7f9fc;
-  /* Light background for headers */
   font-weight: bold;
   color: #333;
-  /* Darker header text */
 }
 
 table tr:hover {
   background-color: rgba(0, 0, 0, 0.03);
-  /* Light hover effect */
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .upgradeBtn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Responsive Table */
+  table,
+  table thead,
+  table tbody,
+  table th,
+  table td,
+  table tr {
+    display: block;
+    width: 100%;
+  }
+
+  table thead {
+    display: none;
+    /* Hide table header on mobile */
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+  }
 }

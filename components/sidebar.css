@@ -1,19 +1,38 @@
 /* components/sidebar.css */
 
+/* Default sidebar styles */
 .sidebar {
   width: 200px;
   background: linear-gradient(to top, #1e1e2f, #2c2c3d, #3a3a4c);
-  /* Dark gradient from bottom to top */
-  padding: 20px;
+  padding: 100px 20px 20px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: auto;
   color: #ffffff;
-  /* White text color for contrast */
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  /* Initially hide sidebar off-screen */
+  z-index: 1000;
 }
 
+/* Sidebar visible state */
+.sidebar.open {
+  transform: translateX(0);
+  /* Slide sidebar in when open */
+}
+
+/* Sidebar full width on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    /* Full width on mobile */
+    height: 100vh;
+  }
+}
+
+/* Sidebar header and links */
 .sidebar h3 {
   font-size: 16px;
   font-weight: 600;
@@ -30,13 +49,12 @@
 }
 
 .sidebar ul li {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .sidebar ul li a {
   text-decoration: none;
   color: #cccccc;
-  /* Light gray for links */
   font-size: 14px;
   font-weight: 500;
   padding: 6px 10px;
@@ -54,4 +72,38 @@
   background-color: #0070f3;
   color: #ffffff;
   font-weight: 600;
+}
+
+/* Toggle button */
+.sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1001;
+  /* Ensure it appears above the sidebar */
+}
+
+/* Main content */
+.mainContent {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adjust main content when sidebar is open */
+.sidebar.open+.mainContent {
+  margin-left: 200px;
+}
+
+/* Main content adjustment on mobile */
+@media (max-width: 768px) {
+  .sidebar.open+.mainContent {
+    margin-left: 0;
+  }
 }

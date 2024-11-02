@@ -16,7 +16,6 @@
 .modalContent {
   background-color: #fff;
   width: 800px;
-  /* Wider for the two-column layout */
   max-width: 90%;
   border-radius: 8px;
   padding: 20px;
@@ -43,24 +42,35 @@
   width: 100%;
 }
 
-/* Two-column layout */
+/* Modal Body Layout */
 .modalBody {
   display: flex;
   gap: 20px;
 }
 
-/* Left column: Most Recent list */
+/* Left Column: Category List */
 .workoutList {
   flex: 1;
   border-right: 1px solid #e0e0e0;
   padding-right: 20px;
 }
 
-.workoutList h3 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #666;
+/* Category Item Styling */
+.categoryItem {
+  padding: 10px;
   margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  /* Ensures the pointer cursor appears on hover */
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.categoryItem:hover,
+.categoryItem.active {
+  background-color: #0070f3;
+  color: #fff;
 }
 
 .workoutItem {
@@ -82,13 +92,12 @@
   margin: 2px 0 0;
 }
 
-/* Right column: Upper body exercises */
+/* Right Column: Exercises Section */
 .exerciseDetailsSection {
   flex: 1;
   padding-left: 20px;
   overflow-y: auto;
   max-height: 300px;
-  /* Limit the height and make it scrollable if necessary */
 }
 
 .exerciseDetailsSection h3 {
@@ -115,7 +124,7 @@
   margin: 0;
 }
 
-/* Styling for each exercise item */
+/* Styling for Each Exercise Item */
 .exerciseCategory ul li {
   font-size: 12px;
   color: #555;
@@ -129,7 +138,7 @@
   cursor: pointer;
 }
 
-/* Select button */
+/* Select Button */
 .selectButton {
   background-color: #0070f3;
   color: #fff;
@@ -147,4 +156,53 @@
   color: #888;
   text-align: center;
   margin-top: 50px;
+}
+
+/* Delete Selected Button Styling */
+.deleteButton {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+  /* Add some space to the right */
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+  /* Darker shade on hover */
+}
+
+.deleteButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #999;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .modalBody {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .workoutList {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .exerciseDetailsSection {
+    max-height: unset;
+    padding-left: 0;
+  }
 }

@@ -3,18 +3,22 @@
 /* Main container for layout */
 .container {
   display: flex;
+  justify-content: flex-start;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
 
 /* Main content area */
 .clientContent {
-  flex: 1;
+  width: 100%;
   padding: 20px;
-  margin-left: 200px;
-  /* Aligns the content directly next to the sidebar */
-  background-color: #f7f7f7;
-  /* Slight background color for distinction */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   min-height: 100vh;
   overflow-y: auto;
+  margin-left: 0;
+  /* Aligns directly next to the sidebar */
 }
 
 /* Header styling */
@@ -28,7 +32,6 @@
 .clientHeader h1 {
   font-size: 20px;
   font-weight: 600;
-  text-transform: capitalize;
   color: #333;
   margin: 0;
 }
@@ -54,11 +57,6 @@
   padding: 0;
   gap: 10px;
   justify-content: flex-start;
-  overflow-x: auto;
-}
-
-.topNavBar ul li {
-  margin: 0;
 }
 
 .topNavBar ul li a {
@@ -67,7 +65,6 @@
   font-weight: 500;
   font-size: 14px;
   padding: 6px 10px;
-  display: inline-block;
   border-radius: 3px;
 }
 
@@ -77,7 +74,7 @@
   color: #fff;
 }
 
-/* Minimalist Training and Metrics Sections */
+/* Training and Metrics Sections */
 .trainingSection,
 .metricsSection {
   background-color: #f9f9f9;
@@ -137,17 +134,18 @@
 /* Metrics section container */
 .metricsContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
-/* Individual metric card */
 .metricCard {
-  flex: 1;
+  flex: 1 1 45%;
   background-color: #fff;
   border-radius: 6px;
   padding: 16px;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin: 6px 0;
 }
 
 .metricCard span {
@@ -210,27 +208,55 @@
   align-items: center;
 }
 
-.exerciseCheckbox {
-  margin-right: 8px;
-}
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
 
-.exerciseActions {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
+  .clientContent {
+    padding: 15px;
+    max-width: 100%;
+    margin-left: 0;
+  }
 
-.deleteButton {
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-}
+  .clientHeader h1 {
+    font-size: 18px;
+  }
 
-.deleteButton:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  .clientHeader p {
+    font-size: 11px;
+  }
+
+  .topNavBar ul {
+    gap: 5px;
+  }
+
+  .trainingSection,
+  .metricsSection {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .trainingStats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metricsContainer {
+    flex-direction: column;
+  }
+
+  .metricCard {
+    flex: 1 1 100%;
+    padding: 12px;
+  }
+
+  .selectedExercises {
+    padding: 8px;
+  }
+
+  .selectedExercises h3 {
+    font-size: 13px;
+  }
 }
